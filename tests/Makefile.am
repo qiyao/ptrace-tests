@@ -113,19 +113,19 @@ noinst_PROGRAMS = $(SAFE) $(CRASHERS)
 # FIXME: -fno-strict-aliasing
 AM_CFLAGS = -std=gnu99 -Wall -Werror -D_FORTIFY_SOURCE=2 -fno-strict-aliasing
 
-x86_64_ia32_gs_LDFLAGS = -lpthread
-late_ptrace_may_attach_check_LDFLAGS = -lpthread
-ppc_dabr_race_LDFLAGS = -lpthread
-erestartsys_LDFLAGS = -lutil
-erestartsys_debugger_LDFLAGS = -lutil
-reparent_zombie_LDFLAGS = -lpthread
-reparent_zombie_clone_LDFLAGS = -lpthread
-detach_stopped_LDFLAGS = -lpthread
-detach_stopped_rhel5_LDFLAGS = -lpthread
-stopped_attach_transparency_LDFLAGS = -lpthread
-erestartsys_trap_LDFLAGS = -lutil
-erestartsys_trap_debugger_LDFLAGS = -lutil
-erestartsys_trap_32fails_debugger_LDFLAGS = -lutil
+x86_64_ia32_gs_LDADD = -lpthread
+late_ptrace_may_attach_check_LDADD = -lpthread
+ppc_dabr_race_LDADD = -lpthread
+erestartsys_LDADD = -lutil
+erestartsys_debugger_LDADD = -lutil
+reparent_zombie_LDADD = -lpthread
+reparent_zombie_clone_LDADD = -lpthread
+detach_stopped_LDADD = -lpthread
+detach_stopped_rhel5_LDADD = -lpthread
+stopped_attach_transparency_LDADD = -lpthread
+erestartsys_trap_LDADD = -lutil
+erestartsys_trap_debugger_LDADD = -lutil
+erestartsys_trap_32fails_debugger_LDADD = -lutil
 # After clone syscall it must call no glibc code (such as _dl_runtime_resolve).
 clone_get_signal_LDFLAGS = -Wl,-z,now
 clone_multi_ptrace_LDFLAGS = -Wl,-z,now
